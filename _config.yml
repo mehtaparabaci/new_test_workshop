@@ -92,32 +92,6 @@ lessons:
     start-time: 8:30 am
     order: 5
 
-  - title: Building Programs with Python
-    gh-name: python-novice
-    type: episode
-    branch: main
-    date:
-      - 11 January 2022
-      - 12 January 2022
-    start-time:
-      - 10:00 am
-      - 10:00 am
-    order: 6
-
-#  - title: Data Analysis and Visualization in R
-#    gh-name: r-novice
-#    type: episode
-#    branch: main
-#    date:
-#      - 15 January 2022
-#      - 16 January 2022
-#      - 17 January 2022
-#    start-time:
-#      - 15:00
-#      - 15:00
-#      - 15:00
-#    order: 7
-
 ###
 # It is unlikely you need to modify the values below this line
 ###
