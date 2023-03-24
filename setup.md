@@ -1,5 +1,5 @@
 ---
-title: Setup for TBC Workshop Title
+title: Setup for New Workshop-Test
 ---
 
 
@@ -178,12 +178,15 @@ specific to languages will be listed in the appropriate section(s) below.
 
 # Managing Academic Software Development
 
+## GitHub ##
+We'll be using the website [GitHub](https://github.com/) to host, back up, and distribute our code. You'll need to [create an account there](https://github.com/signup). As your GitHub username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
+
+
 ## Project Demo Repository
 
 We'll be showing you how to manage an example academic software project. 
-If you've completed our [Version Control with git workshop (linked here)](https://southampton-rsg-training.github.io/git-novice/) , you'll have an example project.
-If not, please [create a copy of our demo repository from this template (linked here)](https://github.com/Southampton-RSG-Training/project-novice-climate-analysis/generate),
-and name it `climate-analysis`. You don't need to run this code as part of the course! It's purely for demonstration purposes.
+If you've completed our **Version Control with git** workshop, you'll have a finished version of our `climate-analysis` repository ([you'll have used the template from here](https://github.com/Southampton-RSG-Training/git-novice-template/))
+If not, please [create a copy of it from this template (linked here)](https://github.com/Southampton-RSG-Training/project-novice-template/generate), and name it `climate-analysis`.
 
 
 ## Install Visual Studio Code
@@ -247,35 +250,6 @@ If it's not installed, you can install it by running `sudo apt-get install git` 
 your distribution.
 
 
-## GitHub ##
-Later on in the session, we'll be demonstrating how to share work with collaborators using [GitHub](https://github.com/). You'll need to [create an account there](https://github.com/signup). As your GitHub username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
-
-In addition, we'll need to set up SSH access to GitHub from your computer. This is how GitHub checks your identity when you try to access it - and is more secure than a password. To set up SSH access, we generate a pair of keys - one public, one private. We want to add the public key to GitHub, whilst the private one stays on our computer.
-
-There are full guides in the GitHub documentation for how to [Make an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). However today we have simplified it like so:
-
-If you already have an ssh key you can use it for Github by coping the public key into the clipboard and pasting it into the GitHub settings page.
-
-First we need to create a variable to store your GitHub email. Copy this command, substituting the email you signed up to GitHub with for `your_github_email@example.com`:
-~~~
-$ my_gh_email=your_github_email@example.com
-~~~
-{: .language-bash}
-
-Then we can run the following command to generate a key-pair and display the public half:
-~~~
-$ ssh-keygen -t ed25519 -C $my_gh_email; eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519; cat ~/.ssh/id_ed25519.pub
-~~~
-{: .language-bash}
-
-You will need to press enter a few times to select default options, and set the passphrase to empty.
-
-Copy the last line of output that starts with `ssh-ed25519` and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
-
-![SSH-Output](fig/setup-SSH-Output.png){:width="50%"}
-
-Finally, go to [your Settings -> SSH keys page and add a new SSH key](https://github.com/settings/ssh/new) (you'll need to be logged into GitHub with the account you have created). Give the key a memorable name (e.g. the name of the computer you are working on) and paste the key from your clipboard into the box labelled key. Then, click **Add SSH key** and you're done!
-
 ## Download Data for Shell Lesson ##
 
 Type the following into the prompt that appears (pressing enter/return after each line):
@@ -302,115 +276,3 @@ Please let the instructors know if you run into any problems.
 {% include links.md %}
 
 # Version Control with Git
-
-## Download Data for Git Lesson ##
-
-Now we are ready to download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
-~~~
-$ cd
-$ git clone https://github.com/Southampton-RSG-Training/git-novice
-~~~
-{: .language-bash}
-
-`cd` will move to your home directory, and `git clone` will download a copy of the materials.
-
-{% include links.md %}
-
-# Building Programs with Python
-
-## Python Setup ##
-
-IDEs: PyCharm, Spyder, VS Code
-
-We use Python 3*. The “Anaconda3” package provides everything Python-related you will need for the workshop. 
-To install [Anaconda](https://www.anaconda.com/products/individual), follow the instructions below.
-
-Some old research projects may be in Python 2 but Python 2 has been retired and new projects should be in Python 3.
-
-### Windows
-Download the latest Anaconda Windows installer. Double-click the installer and follow the instructions. **When asked “Add Anaconda to my PATH environment variable”, answer “yes”. It will warn you not to, but it's required for it to be found by git bash** After it’s finished, close and reopen any open terminals to reload the updated PATH and allow the installed Python to be found.
-
-Once the Anaconda installation is finished you will be asked if you want the installer to initialize Anaconda3 by
-running conda init? You should select yes. Alternatively/additionally you will need to run the following command in 
-GitBash
-
-{: .bash}
-~~~
-conda init bash
-~~~
-
-Then close and reopen GitBash.
-
-Please test the python install open GitBash (or your favorite terminal) and run the following command to verify that the installation was successful.
-
-{: .bash}
-~~~
-cd ~
-python
-~~~
-
-You can then type the following to exit:
-{: .python}
-~~~
-quit()
-~~~
-
-{: .callout}
-~~~
-In some cases GitBash will hang on this command and not launch the Python interpreter. 
-In this case close and reopen git bash and issue the following commands:
-~~~
-
-{: .bash}
-~~~
-cd ~
-echo 'alias python="winpty python.exe"' >> .bashrc
-source .bashrc
-python
-~~~
-
-
-### Mac OS X
-
-#### Mac OS Intel
-Download the latest Anaconda Mac OS X installer. Double-click the .pkg file and follow the instructions.
-
-#### Mac OS M1
-If you have a M1 Mac you need a specific version of Anaconda follow the link below. 
-
-[M1 Compatible Anaconda](https://repo.anaconda.com/archive/Anaconda3-2022.05-MacOSX-arm64.pkg)
-
-Once the Anaconda installation is finished you will be asked if you want the installer to initialize Anaconda3 by
-running conda init? You should select yes.
-
-### Linux
-Download the latest Anaconda Linux Installer.
-
-Install via the terminal like this (you will need to change the version number to the latest version):
-
-First move to the folder where you downloaded the installer, this is likely to be the Downloads folder e.g.
-
-~~~
-$ cd ~/Downloads
-~~~
-{: .language-bash}
-
-~~~
-$ bash Anaconda3-2021.11-Linux-x86_64.sh
-~~~
-{: .language-bash}
-
-Answer ‘yes’ to allow the installer to initialize Anaconda3 in your .bashrc.
-
-## Download Data for Python Lesson ##
-
-Now we are ready to download the code that we need for this lesson. Open a terminal on your machine, and enter:
-~~~
-$ cd
-$ git clone https://github.com/Southampton-RSG-Training/python-novice
-~~~
-{: .language-bash}
-
-`cd` will move to your home directory, and `git clone` will download a copy of the materials.
-
-{% include links.md %}
