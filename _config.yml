@@ -9,8 +9,8 @@ delivery: "static"
 # Overall title for the Workshop.
 # This variable is used to (optionally) add a title in the "jumbotron"
 # (the grey box at the top of the page), and to the extra pages.
-title: "TBC Workshop Title"
-form_title: "TBC+Workshop+Title" # This is required for the surveys
+title: "New Workshop-Test"
+form_title: "New+Workshop-Test" # This is required for the surveys
 
 # Email address, no mailto:
 email: "rsginfo@soton.ac.uk"
@@ -35,8 +35,8 @@ enddate: "TBC"          # e.g. YYYY-MM-DD
 # Specify the details of the instructors and helpers
 # Can be list, or single string
 instructor:
-  - "Instructor 1"
-  - "Instructor 2"
+  - "XXXXX"
+  - "YYYYY"
 instructor-email:
   - "instructor1@domain.com"
   - "instructor2@domain.com"
