@@ -18,7 +18,7 @@ logo_site: "https://rsgsoton.net"
 
 # For static delivery this section can all be ignored ==================================================================
 # Specify the location of the workshop
-venue: "TBC"           # name of location use "online" if online
+venue: "XXX"           # name of location use "online" if online
 address: "TBC"         # address of location or url of platform
 platform-name: "TBC"   # name of online platform e.g. Teams, Zoom e.t.c
 country: "TBC"         # e.g. gb
